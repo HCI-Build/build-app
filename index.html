@@ -1,11 +1,239 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-  <head>
-    <link href="./resources/css/index.css" type="text/css" rel="stylesheet" />
-    <title>Build</title>
-  </head>
-  <body>
-    <h1>Example</h1>
-    <p>Page content goes here</p>
-  </body>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    /* Full-width input fields */
+    input[type=text], input[type=number], input[type=email], input[type=password], input[type=tel] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #5663ff;
+        color: white;
+        padding: 15px 125px;
+        margin: 8px 0px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 30px;
+        font-size: medium;
+    }
+
+    /* Make buttons become lighter on hover */
+    button:hover {
+        opacity: 0.8;
+    }
+
+    /* Styles for the cancel button */
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+    }
+
+    /* Center the image and position the close button */
+    .header_cancel {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+    }
+
+    .container {
+        padding: 16px;
+    }
+    
+    span.forgotPass {
+        float: right;
+        padding-top: 16px;
+    }
+
+    /* The Pop (background) */
+    .pop {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+
+    /* Pop Content/Box */
+    .pop-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+    }
+  
+    @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }   
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+
+    /* Other styling */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-repeat: no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("https://weeattogether.com/wp-content/uploads/2019/07/Red-Potatoes-On-Afterglow-Food-Photography-Backdrop-HORZ.jpg");
+        background-size: cover;
+        background-position: center;
+        background-position-y: top;
+        height: 100%;
+        color: white;
+        text-align: center;
+    }
+
+    p{
+        padding: 25px;
+        font-size: 50px;
+    }
+
+    #id01, #id02{
+        color: black;
+        text-align: left;
+    }
+
+</style>
+</head>
+
+
+
+<body>
+    <p>
+        Welcome to Build
+    </p>
+    
+    <! HTML for the first Login Pop Up >
+    <h2></h2>
+
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+    <div id="id01" class="pop">
+
+        <! Sends data to /action_page.php, filler from W3 Schools>
+        <form class="pop-content animate" action="/action_page.php" method="post">
+            <div class="header_cancel">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Pop">&times;</span>
+                Please Enter your Email and Password
+            </div>
+
+            <! Required tag makes it so you cannot submit empty form>
+            <div class="container">
+                <! Input must be a valid email address>
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="email" required>
+
+                <!  Input must be 8 characters long, type password hides text>
+                <label for="pass"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="pass" minlength="8" required>
+
+                <button type="submit">Login</button>
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="forgotPass"><a href="#">Forgot Password?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <! HTML for the Register Pop Up>
+    <h2></h2>
+
+    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
+
+    <div id="id02" class="pop">
+
+        <! Sends data to /action_page.php, filler from W3 Schools>
+        <form class="pop-content animate" action="/action_page.php" method="post">
+            <div class="header_cancel">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Pop">&times;</span>
+                Please Enter your Information
+            </div>
+
+            <! Required tag makes it so you cannot submit empty form>
+            <div class="container">
+                <label for="fname"><b>Full Name</b></label>
+                <input type="text" placeholder="Enter Full Name" name="fname" required>
+
+                <! Phone number must be 10 characters and all numbers>
+                <label for="phone"><b>Phone Number</b></label>
+                <input type="tel" placeholder="Enter Phone Number" name="phone" pattern="[0-9]{10}" required title="Please enter 10 digits with no hypens or spaces.">
+
+                <! Email address must be valid>
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="email" required>
+
+                <!  Input must be 8 characters long, type password hides text>
+                <label for="pass"><b>Password (8 characters minimum)</b></label>
+                <input type="password" placeholder="Enter Password" name="pass" minlength="8" required>
+
+                <button type="submit">Register</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
 </html>
