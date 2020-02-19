@@ -1,11 +1,155 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="./resources/css/index.css" type="text/css" rel="stylesheet" />
-    <title>Build</title>
   </head>
+
   <body>
-    <h1>Example</h1>
-    <p>Page content goes here</p>
+    <div id="header-container">
+      <h1>
+        Welcome to Build
+      </h1>
+
+      <p>The easiest way to split checks with friends.</p>
+    </div>
+    <! HTML for the first Login Pop Up >
+    <h2></h2>
+
+    <button
+      onclick="document.getElementById('id01').style.display='block'"
+      style="width:auto;"
+    >
+      Login
+    </button>
+
+    <div id="id01" class="pop">
+      <form class="pop-content animate" action="./john_enterpin.html">
+        <div class="header_cancel">
+          <span
+            onclick="document.getElementById('id01').style.display='none'"
+            class="close"
+            title="Close Pop"
+            >&times;</span
+          >
+          Please Enter your Email and Password
+        </div>
+
+        <! Required tag makes it so you cannot submit empty form>
+        <div class="container">
+          <! Input must be a valid email address>
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Enter Email" name="email" required />
+
+          <!  Input must be 8 characters long, type password hides text>
+          <label for="pass"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="pass"
+            minlength="8"
+            required
+          />
+
+          <button type="submit">
+            Login
+          </button>
+
+          <label>
+            <input type="checkbox" checked="checked" name="remember" /> Remember
+            me
+          </label>
+        </div>
+
+        <div class="bottom-container" style="background-color:#f1f1f1">
+          <button
+            type="button"
+            onclick="document.getElementById('id01').style.display='none'"
+            class="cancelbtn"
+          >
+            Cancel
+          </button>
+          <span class="forgotPass"><a href="#">Forgot Password?</a></span>
+        </div>
+      </form>
+    </div>
+
+    <! HTML for the Register Pop Up>
+    <h2></h2>
+
+    <button
+      onclick="document.getElementById('id02').style.display='block'"
+      style="width:auto;"
+    >
+      Register
+    </button>
+
+    <div id="id02" class="pop">
+      <form class="pop-content animate" action="./caroline_enterpin.html">
+        <div class="header_cancel">
+          <span
+            onclick="document.getElementById('id02').style.display='none'"
+            class="close"
+            title="Close Pop"
+            >&times;</span
+          >
+          Please Enter your Information
+        </div>
+
+        <! Required tag makes it so you cannot submit empty form>
+        <div class="container">
+          <label for="fname"><b>Full Name</b></label>
+          <input
+            type="text"
+            placeholder="Enter Full Name"
+            name="fname"
+            required
+          />
+
+          <! Phone number must be 10 characters and all numbers>
+          <label for="phone"><b>Phone Number</b></label>
+          <input
+            type="tel"
+            placeholder="Enter Phone Number"
+            name="phone"
+            pattern="[0-9]{10}"
+            required
+            title="Please enter 10 digits with no hypens or spaces."
+          />
+
+          <! Email address must be valid>
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Enter Email" name="email" required />
+
+          <!  Input must be 8 characters long, type password hides text>
+          <label for="pass"><b>Password (8 characters minimum)</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="pass"
+            minlength="8"
+            required
+          />
+
+          <button type="submit">
+            Register
+          </button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember" /> Remember
+            me
+          </label>
+        </div>
+
+        <div class="bottom-container" style="background-color:#f1f1f1">
+          <button
+            type="button"
+            onclick="document.getElementById('id02').style.display='none'"
+            class="cancelbtn"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

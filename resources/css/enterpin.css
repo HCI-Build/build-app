@@ -15,6 +15,13 @@
     url("../images/food-salad-restaurant-person-5317.jpg");
 }
 
+#header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 #content {
   height: 95vh;
   display: flex;
@@ -23,11 +30,21 @@
   align-items: center;
 }
 
+.avatar {
+  vertical-align: middle;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
 #headertext {
   font-family: "Poppins";
   color: white;
   font-size: 50px;
   margin-bottom: 20px;
+  margin-left: 15px;
+  padding-top: 20px;
 }
 
 #subHeader {
@@ -84,4 +101,14 @@ p {
 
 #instructionContainer {
   margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#not-john {
+  padding-top: 10px;
+  font-family: "Poppins";
+  color: #6d9bf1;
 }
