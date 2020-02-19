@@ -136,7 +136,7 @@ span.forgotPass {
 
 /* Other styling */
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
   display: flex;
   flex-direction: column;
   justify-content: center;
