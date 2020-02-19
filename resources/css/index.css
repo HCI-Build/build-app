@@ -1,16 +1,179 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
+/* Full-width input fields */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #5663ff;
+  color: white;
+  padding: 15px 125px;
+  font-family: "Poppins";
+  margin: 8px 0px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 30px;
+  font-size: medium;
+}
+
+/* Make buttons become lighter on hover */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.header_cancel {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.container {
+  padding: 16px;
+  margin: 50px;
+}
+
+.bottom-container {
+  padding: 16px;
+}
+
+span.forgotPass {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Pop (background) */
+.pop {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Pop Content/Box */
+.pop-content {
+  margin: 50px;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 30vw; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+/* Other styling */
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url("https://weeattogether.com/wp-content/uploads/2019/07/Red-Potatoes-On-Afterglow-Food-Photography-Backdrop-HORZ.jpg");
+  background-size: cover;
+  background-position: center;
+  background-position-y: top;
+  height: 100vh;
+  color: white;
+  text-align: center;
 }
 
 h1 {
-  color: SeaGreen;
+  font-size: 60px;
+  font-family: "Poppins";
+  font-weight: 150;
+  margin: 0;
 }
 
-p,
-li {
+p {
+  font-size: 60px;
+  font-family: "Poppins";
+  color: #c8c8c8;
   font-size: 18px;
 }
 
-a {
-  text-decoration: none;
+#header-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#id01,
+#id02 {
+  color: black;
+  text-align: left;
 }

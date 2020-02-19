@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+#background {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url("../images/food-salad-restaurant-person-5317.jpg");
+}
+
+#header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+#headertext {
+  font-family: "Poppins";
+  color: white;
+  font-size: 50px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  padding-top: 20px;
+}
+
+#subHeader {
+  font-family: "Poppins";
+  color: #cecece;
+  font-size: 25px;
+}
+
+form {
+  margin-top: 100px;
+  width: 400px;
+}
+input[type="text"] {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 50px;
+  font-family: "Poppins";
+  font-size: 20px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+::placeholder {
+  color: white;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 50px;
+  font-family: "Poppins";
+  font-size: 16px;
+  color: white;
+  background-color: #5663ff;
+}
+
+p {
+  font-family: "Poppins";
+  color: #cecece;
+  font-size: 16px;
+}
+
+#instructionContainer {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#not-john {
+  padding-top: 10px;
+  font-family: "Poppins";
+  color: #6d9bf1;
+}
