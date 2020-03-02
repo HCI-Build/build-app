@@ -1,7 +1,7 @@
 //MACROS
 let billTotal = 59.47;
 let paid = 0;
-let progress = (paid / billTotal) * 100;
+let progress = ((paid / billTotal) * 100);
 let meals;
 let yourTotal;
 let tipAmount10 = yourTotal * 0.1;
@@ -459,3 +459,47 @@ const selectTip = tip => {
 attachMealHandler();
 attachSelectedMealHandler();
 attachTipHandler();
+
+/* ***********************************************************
+PAYMENT OPTIONS FUNCTIONS
+*********************************************************** */
+
+document.getElementById("pay-option-c").addEventListener("click", function(){payClickEvent(document.getElementById("pay-option-c"));});
+document.getElementById("pay-option-d").addEventListener("click", function(){payClickEvent(document.getElementById("pay-option-d"));});
+document.getElementById("pay-option-v").addEventListener("click", function(){payClickEvent(document.getElementById("pay-option-v"));});
+document.getElementById("pay-option-a").addEventListener("click", function(){payClickEvent(document.getElementById("pay-option-a"));});
+
+const payClickEvent = (option) => {
+    option.setAttribute("selected", true);
+    if(option.id != "pay-option-c"){
+        document.getElementById("pay-option-c").setAttribute("selected", false);
+    }
+    else{
+        document.getElementById("payment-button-text").innerHTML = "Payment: Credit";
+    }
+    if(option.id != "pay-option-d"){
+        document.getElementById("pay-option-d").setAttribute("selected", false);
+    }
+    else{
+        document.getElementById("payment-button-text").innerHTML = "Payment: Debit";
+    }
+    if(option.id != "pay-option-v"){
+        document.getElementById("pay-option-v").setAttribute("selected", false);
+    }
+    else{
+        document.getElementById("payment-button-text").innerHTML = "Payment: Venmo";
+    }
+    if(option.id != "pay-option-a"){
+        document.getElementById("pay-option-a").setAttribute("selected", false);
+    }
+    else{
+        document.getElementById("payment-button-text").innerHTML = "Payment: Apple Pay";
+    }
+}
+/*
+const newPayClickEvent = () => {
+    document.getElementById("pay-option-container").innerHTML +=
+        "<button for='new' id='pay-option-new' selected='false' onclick='document.getElementById('new-pay-pop').style.display='none''" +
+            "<b> Card </b> <p> XXXX-XXXX-XXXX-9302 </p> </button>";
+}
+ */

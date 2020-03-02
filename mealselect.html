@@ -171,11 +171,95 @@
           <div id="total-container">
             <h3 class="section-label">Your Total</h3>
             <h1 class="total-amount" total="0">$0.00</h1>
-            <div id="pay-button">
-              <h3 id="button-text">Pay your share</h3>
-              <i class="fas fa-paper-plane"></i>
-            </div>
           </div>
+            <div id="button-container">
+                <button id="pay-button">
+                    <h3 id="button-text">Pay your share</h3>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+                <button id="payment-options" onclick="document.getElementById('pay-pop').style.display='block'"
+                    style="width:auto">
+                    <p id="payment-button-text">Choose Payment</p>
+                </button>
+            </div>
+            <!-- Payment pop up -->
+            <div id="pay-pop">
+                <form class="pay-pop animate">
+                    <div class="header-cancel">
+                        <span onclick="document.getElementById('pay-pop').style.display='none'"
+                            class="close"
+                            title="Close"
+                            >&times;</span>
+                        <b>Please Choose a Payment Method</b>
+                    </div>
+                    <div class="container" id="pay-option-container">
+                        <button type="button" for="credit" id="pay-option-c" selected="false" onclick="document.getElementById('pay-pop').style.display='none'"><b>Credit</b>
+                            <p>XXXX-XXXX-XXXX-7341</p>
+                        </button>
+                        <button type="button" for="debit" id="pay-option-d" selected="false" onclick="document.getElementById('pay-pop').style.display='none'"><b>Debit</b>
+                            <p>XXXX-XXXX-XXXX-2854</p>
+                        </button>
+                        <button type="button" for="venmo" id="pay-option-v" selected="false" onclick="document.getElementById('pay-pop').style.display='none'"><b>Venmo Balance</b>
+                            <p>@Natalie-Stewart</p>
+                        </button>
+                        <button type="button" for="apple" id="pay-option-a" selected="false" onclick="document.getElementById('pay-pop').style.display='none'"><b>Apple Pay</b></button>
+                        <button type="button" for="new" id="pay-option"
+                            selected="false" onclick="document.getElementById('new-pay-pop').style.display='block'">
+                            <b>Enter New Payment Method</b></button>
+                    </form>
+            </div>
+            <!-- New payment option pop up -->
+            <div id="new-pay-pop">
+                <form class="new-pay-pop animate">
+                    <div class="header-cancel">
+                        <span onclick="document.getElementById('new-pay-pop').style.display='none'"
+                            class="close"
+                            title="Close"
+                            >&times;</span>
+                        <b>Please Enter your Card Information</b>
+                    </div>
+                <div class="container-new">
+                    <label id="fname"><b>Full Name</b></label>
+                    <input
+                        type="text"
+                        placeholder="Enter Full Name"
+                        name="fname"
+                        required
+                        />
+                    <label id="card-num"><b>Card Number</b></label>
+                    <input
+                        type="tel"
+                        placeholder="Enter Card Number"
+                        name="card-num"
+                        pattern="[0-9]{16}"
+                        required
+                        title="Please enter 16 digits with no hypens or spaces."
+                        />
+                    <label id="exp-date"><b>Expiration Date</b></label>
+                    <input
+                        type="month"
+                        placeholder="Enter Expiration Date"
+                        name="exp-date"
+                        required
+                        />
+                    <label id="sec-code"><b>Security Code</b></label>
+                    <input
+                        type="password"
+                        placeholder="Enter Security Code"
+                        name="sec-code"
+                        pattern="[0-9]{4}"
+                        required
+                        title="Please enter 4 digits"
+                        />
+                    <!--
+                    <label id="billing"><b>Is the billing information the same?</b></label>
+                    <input type="checkbox" checked="checked" /> -->
+                    <label id="default"><b>Use this as your default payment method?</b></label>
+                    <input type="checkbox" checked="checked" />
+                    <button action="document.getElementById('new-pay-pop').style.display='none'">
+                        <b>Submit</b></button>
+                  </form>
+            </div>
         </section>
       </article>
     </main>
