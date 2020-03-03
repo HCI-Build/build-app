@@ -1,0 +1,69 @@
+body {
+  font-family: "Poppins";
+}
+* {
+  box-sizing: border-box;
+}
+body,
+main,
+div {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  background-color: #5660ff;
+  margin: 0px;
+  color: white;
+  height: 10vw;
+}
+#title {
+  padding-top: 10px;
+  font-size: 3vw;
+}
+body {
+  margin: 0px;
+}
+main {
+  padding-top: 10px;
+}
+#check {
+  display: flex;
+  font-size: 16vw;
+  height: 16vw;
+  width: 16vw;
+  color: #0ad13a;
+  align-self: center;
+  padding-top: 5px;
+}
+#receipt {
+  display: flex;
+  align-self: center;
+}
+#receipt-options {
+  display: flex;
+  align-self: center;
+  font-style: bold;
+  font-size: 1.5vw;
+}
+button {
+  background-color: #5663ff;
+  flex-direction: row;
+  color: white;
+  padding: 15px 125px;
+  font-family: "Poppins";
+  margin: 8px 0px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 30px;
+  font-size: medium;
+}
+button:hover {
+  opacity: 0.8;
+}
+h4 {
+  font-size: 2vw;
+}

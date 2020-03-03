@@ -1,0 +1,65 @@
+<!DOCTYPE hyml>
+<html>
+    <head>
+        <script
+            src="https://kit.fontawesome.com/1369b97615.js"
+            crossorigin="anonymous">
+        </script>
+        <link href="./resources/css/completed.css"
+              type="text/css"
+              rel="stylesheet"
+              />
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+              rel="stylesheet"
+              />
+        <style id="keyframes">
+          @keyframes load {
+            0% {
+              height: 0%;
+            }
+            100% {
+              height: 0%;
+            }
+          }
+
+          @keyframes value-load {
+            0% {
+              height: 0%;
+            }
+            100% {
+              height: 0%;
+            }
+          }
+        </style>
+    </head>
+    <body id="container">
+        <header>
+            <div id="header-container">
+                <h1 id="title">Thank You!</h1>
+            </div>
+        </header>
+        <main>
+            <div id="check">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div id="receipt">
+                <h3 id="receipt-options">Send Receipt To: </h3>
+                <button type="button" id="recipt-opt">
+                    <b>Email: natalie.stuart@gmail.com</b>
+                </button>
+                <button type="button" id="receipt-opt">
+                    <b>Phone: (773)-419-8604</b>
+                </button>
+            </div>
+            <script>
+                let buttons = document.getElementsByTagName("button");
+                buttons[0].addEventListener("click", function(){bClickEvent();});
+                buttons[1].addEventListener("click", function(){bClickEvent();});
+                
+                const bClickEvent = () => {
+                    document.getElementById("receipt").innerHTML =
+                    "<h4> Thank You for using Build! Your reciept has been sent.</h4>";
+                }
+            </script>
+        </main>
+    </body>
