@@ -27,6 +27,20 @@ const resetTotals = () => {
   updatePersonalTotal();
 };
 
+const deselectTips = () => {
+  if (isTipSelected() == true) {
+    resetSelectedTip();
+  }
+  reAttachHandlers();
+};
+
+const deselectCustomTip = () => {
+  let customAmountContainer = document.getElementById(
+    "custom-amount-container"
+  );
+  customAmountContainer.style.display = "none";
+};
+
 const setHalfMeal = meal => {
   let newPrice = (parseFloat(meal.getAttribute("price")) / 2).toFixed(2);
   meal.setAttribute("price", newPrice);
@@ -389,6 +403,7 @@ const addToTotal = event => {
 };
 
 const selectTip = tip => {
+  deselectCustomTip();
   let tipAmount = tip.getAttribute("tip");
   let tipId = tip.id;
   let currentTip = document.getElementById(`${tipId}`);
@@ -465,3 +480,42 @@ const resetHalf = meal => {
    *********************************************************** */
 
 reAttachHandlers();
+
+/* ***********************************************************
+   Custom Tip
+   *********************************************************** */
+
+let customHalfContainer = document.getElementsByClassName(
+  "custom-half-container"
+)[0];
+let customAmountContainer = document.getElementById("custom-amount-container");
+document
+  .getElementById("customTipAmount")
+  .addEventListener("keydown", function(x) {
+    if (x.keyCode == 13) {
+      customInput();
+    }
+  });
+
+customHalfContainer.addEventListener("click", function() {
+  customAmountContainer.style.display = "flex";
+});
+
+const customInput = () => {
+  deselectTips();
+  let input = document.getElementById("customTipAmount").value;
+  if (input.length != 0) {
+    let previousTotal = getTableTotal();
+    let total = (parseFloat(input) + parseFloat(previousTotal)).toFixed(2);
+    document.querySelector(".total-amount").outerHTML = `
+        <h1 class="total-amount" total="${total}">$${total}</h1>
+        `;
+  } else {
+    input = 0;
+    let previousTotal = getTableTotal();
+    let total = parseFloat(input) + parseFloat(previousTotal);
+    document.querySelector(".total-amount").outerHTML = `
+        <h1 class="total-amount" total="${total}">$${total}</h1>
+        `;
+  }
+};
