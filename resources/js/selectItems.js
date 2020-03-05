@@ -339,6 +339,7 @@ const addToUnselected = event => {
 };
 
 const selectMeal = meal => {
+  deselectCustomTip();
   let mealId = meal.id;
   let selectedItem = document.getElementById(`${mealId}`);
   selectedItem.outerHTML = selectedMealHTML(meal);
@@ -371,6 +372,7 @@ const addToSelectedMeals = event => {
 };
 
 const unselectMeal = meal => {
+  deselectCustomTip();
   let mealId = meal.id;
   let unselectedItem = document.getElementById(`${mealId}`);
   unselectedItem.outerHTML = unselectedMealHTML(meal);
