@@ -39,6 +39,10 @@ const deselectCustomTip = () => {
     "custom-amount-container"
   );
   customAmountContainer.style.display = "none";
+  let tipInstructions = document.getElementById(
+    "tip-instructions"
+  );
+  tipInstructions.style.display = "none";
 };
 
 const setHalfMeal = meal => {
@@ -501,6 +505,8 @@ document
 
 customHalfContainer.addEventListener("click", function() {
   customAmountContainer.style.display = "flex";
+  let tipInstructions = document.getElementById("tip-instructions");
+  tipInstructions.style.display = "block";
 });
 
 const customInput = () => {

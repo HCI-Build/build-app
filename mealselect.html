@@ -188,9 +188,11 @@
                 <h3 id="percentage-font">Custom Tip:</h3>
             </div>
             <div id="custom-amount-container">
-                <input type="text" id="customTipAmount" placeholder="$0"></input>
+                <p id="currency">$</p>
+                <input type="text" id="customTipAmount" placeholder="0"></input>
             </div>
           </div>
+           <p id="tip-instructions">Press Enter to Submit Custom Tip</p>
           <!-- Contains tip options and payment total -->
           <div id="total-container">
             <h3 class="section-label">Your Total</h3>
@@ -248,13 +250,15 @@
                 <div class="container-new">
                     <label id="fname"><b>Full Name</b></label>
                     <input
+                        id="name"
                         type="text"
                         placeholder="Enter Full Name"
                         name="fname"
                         required
                         />
-                    <label id="card-num"><b>Card Number</b></label>
+                    <label id="card-num"><b>Card Number - Visa or Mastercard</b></label>
                     <input
+                        id="c-num"
                         type="tel"
                         placeholder="Enter Card Number"
                         name="card-num"
@@ -264,13 +268,17 @@
                         />
                     <label id="exp-date"><b>Expiration Date</b></label>
                     <input
+                        id="exp"
                         type="month"
                         placeholder="Enter Expiration Date"
                         name="exp-date"
+                        min="2020-01"
+                        max="2050-01"
                         required
                         />
                     <label id="sec-code"><b>Security Code</b></label>
                     <input
+                        id="sec"
                         type="password"
                         placeholder="Enter Security Code"
                         name="sec-code"
@@ -279,8 +287,15 @@
                         title="Please enter 4 digits"
                         />
                     <label id="default"><b>Use this as your default payment method?</b></label>
-                    <input type="checkbox" checked="checked" />
-                    <button action="document.getElementById('new-pay-pop').style.display='none'">
+                    <input type="checkbox" id="def" checked="true" />
+                    <label id="cred"><b>Is this a credit card?</b>
+                    <input type="checkbox" id="cred-box"/>
+                    </label>
+                    <label id="deb">
+                    <b> Is this a debit card? </b>
+                    <input type="checkbox" id="deb-box"/>
+                    </label>
+                    <button type="button" id="submit-new-pay" action="document.getElementById('new-pay-pop').style.display='none'">
                         <b>Submit</b></button>
                   </form>
             </div>
