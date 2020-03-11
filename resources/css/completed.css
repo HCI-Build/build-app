@@ -10,6 +10,24 @@ div {
   display: flex;
   flex-direction: column;
 }
+#header-end {
+  margin-top: 50px;
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 50px;
+}
+#finished {
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 20px;
+  color: #5660ff;
+  margin-right: 2vw;
+}
 header {
   display: flex;
   justify-content: center;
